@@ -55,8 +55,8 @@ Setting SKL
 
                                     <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
                                         <fieldset class="form-group">
-                                            <label for="basicInput">Taanggal</label>
-                                            <input type="text" class="form-control" id="basicInput" v-model="tanggal">
+                                            <label for="basicInput">Tanggal</label>
+                                            <input type="date" class="form-control" id="basicInput" v-model="tanggal">
                                         </fieldset>
                                     </div>
                                     <br>
@@ -91,6 +91,17 @@ Setting SKL
                                         <fieldset class="form-group">
                                             <label for="basicInputFile">Upload Tanda Tangan</label>
                                             <input type="file" ref="tanda_tangan" class="form-control-file" v-on:change="handleLogoUpload" id="basicInputFile">
+                                        </fieldset>
+                                    </div>
+                                    <br>
+                                    <br>
+
+
+
+                                    <div class="col-lg-12 col-md-12">
+                                        <fieldset class="form-group">
+                                            <label for="basicInputFile">Upload Cap</label>
+                                            <input type="file" ref="cap" class="form-control-file" v-on:change="handleLogoUpload" id="basicInputFile">
                                         </fieldset>
                                     </div>
                                     <br>

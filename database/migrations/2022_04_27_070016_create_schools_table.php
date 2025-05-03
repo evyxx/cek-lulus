@@ -25,10 +25,11 @@ class CreateSchoolsTable extends Migration
             $table->string('kop_npsn')->nullable(); // Added
             $table->string('kop_nss')->nullable(); // Added
             $table->string('kop_kodesekolah')->nullable(); // Added
+            $table->string('kop_nama_provinsi')->nullable();
             $table->string('kop_nama_disdik')->nullable();
+            $table->string('kop_nama_cabdin')->nullable();
             $table->string('kop_th_pelajaran')->nullable();
             $table->string('nama_surat')->nullable();
-            $table->string('no_surat')->nullable();
             $table->string('pembuka_surat')->nullable();
             $table->string('penutup_surat')->nullable();
             $table->string('jabatan_penandatangan')->nullable();

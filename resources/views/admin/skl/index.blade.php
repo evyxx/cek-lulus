@@ -51,10 +51,17 @@ Setting SKL
 
                                 <table>
                                     <tr>
+                                        <td class="font-14"><b>Nama Provinsi</b></td>
+                                        <td class="font-14">&nbsp;: &nbsp; &nbsp; @{{ school.kop_nama_provinsi}}</td>
+                                    </tr>
+                                    <tr>
                                         <td class="font-14"><b>Nama Dinas</b></td>
                                         <td class="font-14">&nbsp;: &nbsp; &nbsp; @{{ school.kop_nama_disdik}}</td>
                                     </tr>
-                                    <!--end tr-->
+                                    <tr>
+                                        <td class="font-14"><b>Nama Cabang Dinas</b></td>
+                                        <td class="font-14">&nbsp;: &nbsp; &nbsp; @{{ school.kop_nama_cabdin}}</td>
+                                    </tr>
                                     <tr>
                                         <td class="font-14"><b>Nama Sekolah</b></td>
                                         <td class="font-14">&nbsp;: &nbsp; &nbsp; @{{ school.kop_nama_sekolah}}</td>
@@ -78,6 +85,21 @@ Setting SKL
                                     <tr>
                                         <td class="font-14"><b>Kode Pos</b></td>
                                         <td class="font-14">&nbsp;: &nbsp; &nbsp; @{{ school.kop_pos}}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="font-14"><b>NPSN</b></td>
+                                        <td class="font-14">&nbsp;: &nbsp; &nbsp; @{{ school.kop_npsn}}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="font-14"><b>NSS</b></td>
+                                        <td class="font-14">&nbsp;: &nbsp; &nbsp; @{{ school.kop_nss}}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="font-14"><b>Kode Sekolah</b></td>
+                                        <td class="font-14">&nbsp;: &nbsp; &nbsp; @{{ school.kop_kodesekolah}}</td>
                                     </tr>
 
                                     <tr>
@@ -265,6 +287,10 @@ Setting SKL
                                     <tr>
                                         <td class="font-14"><b>TTD</b></td>
                                         <td class="font-14">&nbsp;: &nbsp; &nbsp; <img :src="'/files/ttd/' + school.tanda_tangan" width="100px"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-14"><b>Stempel</b></td>
+                                        <td class="font-14">&nbsp;: &nbsp; &nbsp; <img :src="'/files/cap/' + school.cap" width="100px"></td>
                                     </tr>
 
 

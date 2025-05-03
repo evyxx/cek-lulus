@@ -45,7 +45,7 @@ Setting SKL
                                             <input type="text" class="form-control" id="basicInput" v-model="nama_surat">
                                         </fieldset>
                                     </div>
-                                    <br>
+                                    <!-- <br>
 
                                     <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
                                         <fieldset class="form-group">
@@ -53,7 +53,7 @@ Setting SKL
                                             <input type="text" class="form-control" id="basicInput" v-model="no_surat">
                                         </fieldset>
                                     </div>
-                                    <br>
+                                    <br> -->
 
                                     <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
                                         <label for="basicInput">Pembuka Surat</label>
@@ -97,23 +97,19 @@ Setting SKL
         data: {
             nama_surat: JSON.parse(String.raw `{!! json_encode($school->nama_surat) !!}`),
             pembuka_surat: '{!! $school->pembuka_surat !!}',
-            no_surat: '{!! $school->no_surat !!}',
             school: JSON.parse(String.raw `{!! json_encode($school) !!}`),
+            loading: false,
         },
         methods: {
             submitForm: function() {
                 this.sendData();
             },
             sendData: function() {
-                // console.log('submitted');
                 let vm = this;
                 vm.loading = true;
                 axios.post('/skl/edit_pembuka2/{{ $school->id }}', {
                         nama_surat: this.nama_surat,
                         pembuka_surat: this.pembuka_surat,
-                        no_surat: this.no_surat,
-                        created_at: this.created_at,
-                        updated_at: this.updated_at,
                     })
                     .then(function(response) {
                         vm.loading = false;
@@ -127,7 +123,6 @@ Setting SKL
                                 window.location.href = '/skl';
                             }
                         })
-                        // console.log(response);
                     })
                     .catch(function(error) {
                         vm.loading = false;
@@ -138,9 +133,7 @@ Setting SKL
                             'error'
                         )
                     });
-            },
-
-
+            }
         }
     })
 </script>

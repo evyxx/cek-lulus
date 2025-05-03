@@ -82,13 +82,13 @@
                                     <br>
 
                                     <div class="card-body card-dashboard text-center">
-                                        <p class="text-dark">MASUKAN NO UJIAN DAN KLIK TOMBOL CEK</p>
+                                        <p class="text-dark">MASUKAN NISN DAN KLIK TOMBOL CEK</p>
 
                                         <br>
                                         <form @submit.prevent="submitSearch">
 
                                             <div class="form-group text-center">
-                                                <input type="text" v-model="search" class="form-control" id="maxlength-position-inside" placeholder="NO .UJIAN" maxlength="17" />
+                                                <input type="text" v-model="search" class="form-control" id="maxlength-position-inside" placeholder="NISN" maxlength="17" />
                                             </div>
                                             <br>
                                             <button type="submit" class="btn btn-success">CEK</button>
@@ -131,7 +131,7 @@
                             <a href="#">
                                 <img alt="Logo" src="/files/logo/{{ $web->logo}}" class="h-15px h-md-20px" />
                             </a>
-                            <span class="mx-5 fs-6 fw-bold text-gray-600 pt-1" href="#">© 2023 {{ $web->title }}.</span>
+                            <span class="mx-5 fs-6 fw-bold text-gray-600 pt-1" href="#">© 2025 {{ $web->title }}.</span>
                         </div>
                         <ul class="menu menu-gray-600 menu-hover-primary fw-bold fs-6 fs-md-5 order-1 mb-5 mb-md-0">
                             <li class="menu-item">

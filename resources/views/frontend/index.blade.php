@@ -74,7 +74,7 @@
 
                         <br>
                         @if($setting->status == 1)
-                        <h3 class="text-white mb-15">SILAHKAN CEK KELULUSAN ANDA index</h3>
+                        <h3 class="text-white mb-15">SILAHKAN CEK KELULUSAN ANDA</h3>
                         <div class="col-xl-12" v-if="currentDate() <= 0">
                             <div class="card box-shadow-0 border-info">
 
@@ -84,7 +84,7 @@
                                     <div class="card-body card-dashboard text-center">
 
                                         @if(isset($req_search))
-                                        <div v-for="st in student" v-if="search == st.no_exam ">
+                                        <div v-for="st in student" v-if="search == st.nisn ">
                                             <div class="alert alert-success" role="alert" v-if="st.status == 1">
                                                 <strong>Selamat! @{{ st.name }}</strong>
                                                 <p>@{{ st.message }}</p>
@@ -127,10 +127,10 @@
 
                                         </div>
 
-                                        <div v-for="st in student" v-if="search != st.no_exam">
+                                        <div v-for="st in student" v-if="search != st.nisn">
                                             <div class="alert alert-danger" role="alert">
 
-                                                <strong>NO UJIAN TIDAK DITEMUKAN</strong>
+                                                <strong>NISN TIDAK DITEMUKAN</strong>
 
 
                                             </div>
@@ -178,7 +178,7 @@
                         </div>
                         <ul class="menu menu-gray-600 menu-hover-primary fw-bold fs-6 fs-md-5 order-1 mb-5 mb-md-0">
                             <li class="menu-item">
-                                <a href="#" target="_blank" class="menu-link px-2">website</a>
+                                <a href="#" target="_blank" class="menu-link px-2">SIK</a>
                             </li>
 
                         </ul>

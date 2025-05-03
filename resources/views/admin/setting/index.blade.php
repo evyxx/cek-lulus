@@ -45,13 +45,13 @@ Pengumuman
 
                         <table>
                             <tr>
-                                <td class="font-14"><b>STATUS</b></td>
+                                <td class="font-14"><b>Status</b></td>
                                 <td v-if="setting.status == 1" class="font-14">&nbsp;: &nbsp; &nbsp; <span class="badge badge-success"> DIBUKA</span></td>
                                 <td v-if="setting.status == 2" class="font-14">&nbsp;: &nbsp; &nbsp; <span class="badge badge-danger"> DITUTUP</span></td>
                             </tr>
                             <!--end tr-->
                             <tr>
-                                <td class="font-14"><b>DIMULAI PADA :</b></td>
+                                <td class="font-14"><b>Dimulai Pada </b></td>
                                 <td class="font-14">&nbsp;: &nbsp; &nbsp; @{{ setting.date }}</td>
                             </tr>
 

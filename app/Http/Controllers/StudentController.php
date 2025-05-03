@@ -106,7 +106,10 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $student = Student::find($id);
+        return view('admin.student.edit', [
+            'student' => $student
+        ]);
     }
 
     /**
@@ -116,9 +119,23 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Student $student)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'nis' => 'required',
+            'rombel' => 'required',
+            'rayon' => 'required',
+        ]);
+
+        $student->update([
+            'name' => $request->name,
+            'nis' => $request->nis,
+            'rombel' => $request->rombel,
+            'rayon' => $request->rayon,
+        ]);
+
+        return redirect('/student')->with('success', 'Data has been updated');
     }
 
     /**

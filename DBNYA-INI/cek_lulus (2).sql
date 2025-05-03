@@ -114,7 +114,9 @@ CREATE TABLE `schools` (
   `kop_npsn` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `kop_nss` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `kop_kodesekolah` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `kop_nama_provinsi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `kop_nama_disdik` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `kop_nama_cabdin` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `kop_th_pelajaran` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `nama_surat` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `pembuka_surat` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -133,9 +135,13 @@ CREATE TABLE `schools` (
 --
 -- Dumping data for table `schools`
 --
+INSERT INTO `schools` (`id`, `kop_logo_dinas`, `kop_nama_sekolah`, `kop_alamat`, `kop_telepon`, `kop_pos`, `kop_website`, `kop_email`, `kop_npsn`, `kop_nss`, `kop_kodesekolah`, `kop_nama_provinsi`, `kop_nama_disdik`, `kop_nama_cabdin`, `kop_th_pelajaran`, `nama_surat`, `pembuka_surat`, `penutup_surat`, `jabatan_penandatangan`, `nama_penandatangan`, `nip_penandatangan`, `tempat`, `tanggal`, `tanda_tangan`, `cap`, `created_at`, `updated_at`) VALUES
+(2, 'SMA NEGERI 2 PARUNG_Logo-propinsi-jawa-barat.png', 'SMA NEGERI 2 PARUNG', 'Jl.warujaya No.18 Kec.parung Bogor ok', '02133229023', '16331', 'https://sman2parung.sch.id', 'sman2parung@gmail.com', '20231421', '40 1 02 02 02 018', '32031521', 'PEMERINTAH DAERAH PROVINSI JAWABARAT', 'DINAS PENDIDIKAN', 'CABANG DINAS PENDIDIKAN WILAYAH I', '2024-2025', 'SURAT KETERANGAN LULUS', 'Kepala SMK NEGERI 1 GUNUNGPUTRI Tahun Pelajaran 2024/2025, dengan berdasarkan : 
+1. Penyelesaian seluruh program pembelejaran pada kurikulum merdeka;
+2. Kriteria kelulusan dari satuan pedidikan pada kurikulum merdeka;
+3. Rapat pleno Dewan Guru tentang penetapan kelulusan pada tanggal 5 Mei 2025;
 
-INSERT INTO `schools` (`id`, `kop_logo_dinas`, `kop_nama_sekolah`, `kop_alamat`, `kop_telepon`, `kop_pos`, `kop_website`, `kop_email`, `kop_nama_disdik`, `kop_th_pelajaran`, `nama_surat`, `no_surat`, `pembuka_surat`, `penutup_surat`, `jabatan_penandatangan`, `nama_penandatangan`, `nip_penandatangan`, `tempat`, `tanggal`, `tanda_tangan`, `created_at`, `updated_at`) VALUES
-(1, 'SMA NEGERI 1 PARUNG_Logo-propinsi-jawa-barat.png', 'SMA NEGERI 1 PARUNG', 'Jl.warujaya No.17 Kec.parung Bogor ok', '02133229022', '16330', 'https://sman1parung.sch.id', 'smanparung@gmail.com', 'DINAS PENDIDIKAN PROVINSI JAWABARAT', '2022-2023', 'SURAT KETERANGAN LULUS', '2090/2020/1192-12', 'Yang bertanda tangan di bawah ini, Kepala Sekolah Menengah Atas Negeri 1 Parung,  Kabupaten Bogor, Provinsi Jawa Barat menerangkan bahwa :', 'Dari satuan pendidikan berdasarkan hasil ujian sekolah Tahun pelajaran 2022/2023\r\n\r\nDemikian Surat keterangan ini dibuat untuk digunakan sebagaimana mestinya.', 'KEPALA SEKOLAH', 'NAMA KEPSEK', '1920202337193739221', 'Bogor ok', '2022-04-28', '2022-04-28_ttd.PNG', NULL, '2022-04-29 23:51:01');
+menerangkan bahwa :', 'Surat Keterangan Lulus hanya berlaku sampai diterbitkannya ijazah', 'KEPALA SEKOLAH', 'Aman Sihombing, M.Pd', '196510181995121001', 'Gunungputri', '2022-04-28', 'ttd.png', 'stempel.png', NULL, '2022-04-29 23:51:01');
 
 -- --------------------------------------------------------
 
@@ -220,9 +226,9 @@ CREATE TABLE `students` (
 --
 -- Dumping data for table `students`
 --
-INSERT INTO `students` (`id`, `nisn`, `name`, `nama_ortu`, `tempat_tgl_lahir`, `nis`, `class`, `prog_keahlian`, `komp_keahlian`, `status`, `message`, `created_at`, `updated_at`, `pai`, `pkn`, `bindo`, `pjok`, `sejarah`, `seni`, `bsun`, `mat`, `bing`, `inf`, `ipas`, `dk`, `kk`, `pkl`, `bjep`, `dg`) VALUES
-(1, '12345611', 'FAUZI AGUSTIAN', 'BAPAK FAUZI', 'Bogor, 8 maret 1980', '121212', '12 IPA 5', 'Teknik Informatika', 'Jaringan Komputer', 1, 'ANDA DINYATAKAN LULUS', '2022-04-30 01:25:27', '2022-04-30 01:25:27', 80, 80, 75, 85, 70, 90, 88, 92, 85, 80, 78, 85, 87, 90, 88, 86),
-(2, '12345612', 'ANDI SAPUTRA', 'IBU ANDI', 'Jakarta, 10 April 1981', '121213', '12 IPA 6', 'Teknik Informatika', 'Jaringan Komputer', 1, 'ANDA DINYATAKAN LULUS', '2022-04-30 01:25:27', '2022-04-30 01:25:27', 85, 90, 75, 80, 85, 88, 90, 85, 80, 82, 84, 86, 88, 89, 87, 85);
+INSERT INTO `students` (`id`, `nisn`, `name`, `nama_ortu`, `tempat_tgl_lahir`, `nis`, `class`, `prog_keahlian`, `komp_keahlian`, `status`, `message`, `pai`, `pkn`, `bindo`, `pjok`, `sejarah`, `seni`, `bsun`, `mat`, `bing`, `inf`, `ipas`, `dk`, `kk`, `pkl`, `bjep`, `dg`) VALUES
+(1, '12345611', 'FAUZI AGUSTIAN', 'BAPAK FAUZI', 'Bogor, 8 maret 1980', '121212', '12 IPA 5', 'Teknik Informatika', 'Jaringan Komputer', 1, 'ANDA DINYATAKAN LULUS', 80, 80, 75, 85, 70, 90, 88, 92, 85, 80, 78, 85, 87, 90, 88, 86),
+(2, '12345612', 'ANDI SAPUTRA', 'IBU ANDI', 'Jakarta, 10 April 1981', '121213', '12 IPA 6', 'Teknik Informatika', 'Jaringan Komputer', 1, 'ANDA DINYATAKAN LULUS', 85, 90, 75, 80, 85, 88, 90, 85, 80, 82, 84, 86, 88, 89, 87, 85);
 
 -- --------------------------------------------------------
 
@@ -285,8 +291,8 @@ INSERT INTO `webs` (`id`, `title`, `logo`, `web_name`, `slide_1`, `slide_2`, `sl
 -- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+  ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`),
+  ADD INDEX `failed_jobs_queue_index` (`queue`);
 
 --
 -- Indexes for table `migrations`

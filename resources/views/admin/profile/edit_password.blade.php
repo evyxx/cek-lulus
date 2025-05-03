@@ -27,7 +27,7 @@ Profile
 
             <div class="card box-shadow-0 border-info">
                 <div class="card-header card-head-inverse bg-secondary">
-                    <h3 class="card-title text-center">GANTI PASSWORD</h3>
+                    <h3 class="card-title text-center">Ganti Password</h3>
 
 
                 </div>
@@ -46,7 +46,7 @@ Profile
                                 <br>
                                 <br>
                                 <a class="btn btn-primary" href="/profile"> Kembali</a>
-                                &nbsp; <button type="submit" class="btn btn-success"> simpan</button>
+                                &nbsp; <button type="submit" class="btn btn-success"> Simpan</button>
                             </form>
                         </div>
 

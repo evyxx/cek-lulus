@@ -38,11 +38,26 @@ Setting SKL
                         @csrf
                         <div class="card-body card-dashboard">
                             <div class="row">
-                                <div class="col-12">
+                            <div class="col-12">
+                                    <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <label for="basicInput">Nama Provinsi</label>
+                                            <input type="text" class="form-control" id="basicInput" v-model="kop_nama_provinsi">
+                                        </fieldset>
+                                    </div>
+                                    
+                            
                                     <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
                                         <fieldset class="form-group">
                                             <label for="basicInput">Nama Dinas</label>
                                             <input type="text" class="form-control" id="basicInput" v-model="kop_nama_disdik">
+                                        </fieldset>
+                                    </div>
+                                    
+                                    <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <label for="basicInput">Nama Cabang Dinas</label>
+                                            <input type="text" class="form-control" id="basicInput" v-model="kop_nama_cabdin">
                                         </fieldset>
                                     </div>
                                     <br>
@@ -85,6 +100,29 @@ Setting SKL
                                             <input type="text" class="form-control" id="basicInput" v-model="kop_pos">
                                         </fieldset>
                                     </div>
+
+                                    <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <label for="basicInput">NPSN</label>
+                                            <input type="text" class="form-control" id="basicInput" v-model="kop_npsn">
+                                        </fieldset>
+                                    </div>
+
+                                    <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <label for="basicInput">NSS</label>
+                                            <input type="text" class="form-control" id="basicInput" v-model="kop_nss">
+                                        </fieldset>
+                                    </div>
+                                    
+                                    <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <label for="basicInput">Kode Sekolah</label>
+                                            <input type="text" class="form-control" id="basicInput" v-model="kop_kodesekolah">
+                                        </fieldset>
+                                    </div>
+                                    
+                            
                                     <br>
 
                                     <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
@@ -94,6 +132,8 @@ Setting SKL
                                         </fieldset>
                                     </div>
                                     <br>
+
+                                    
 
                                     <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
                                         <fieldset class="form-group">
@@ -150,6 +190,12 @@ Setting SKL
             kop_pos: '{!! $school->kop_pos !!}',
             kop_website: '{!! $school->kop_website !!}',
             kop_email: '{!! $school->kop_email !!}',
+            kop_npsn: '{!! $school->kop_npsn !!}',
+            kop_nns: '{!! $school->kop_nss !!}',
+            kop_kodesekolah: '{!! $school->kop_kodesekolah !!}',
+            kop_nama_provinsi: '{!! $school->kop_nama_provinsi !!}',
+            kop_nama_disdik: '{!! $school->kop_nama_disdik !!}',
+            kop_nama_cabdin: '{!! $school->kop_nama_cabdin !!}',
             kop_logo_dinas: '',
             school: JSON.parse(String.raw `{!! json_encode($school) !!}`),
         },
@@ -176,6 +222,12 @@ Setting SKL
                     kop_pos: this.kop_pos,
                     kop_website: this.kop_website,
                     kop_email: this.kop_email,
+                    kop_npsn: this.kop_npsn,
+                    kop_nss: this.kop_nss,
+                    kop_kodesekolah: this.kop_kodesekolah,
+                    kop_nama_provinsi: this.kop_nama_provinsi,
+                    kop_nama_disdik: this.kop_nama_disdik,
+                    kop_nama_cabdin: this.kop_nama_cabdin,                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
                     kop_logo_dinas_name: this.kop_logo_dinas['name']
 
                 }

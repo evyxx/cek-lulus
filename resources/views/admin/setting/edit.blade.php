@@ -29,7 +29,7 @@ Edit Pengumuman
 
             <div class="card box-shadow-0 border-info">
                 <div class="card-header card-head-inverse bg-secondary">
-                    <h3 class="card-title text-center">EDIT PENGUMUMAN</h3>
+                    <h3 class="card-title text-center">Edit Pengumuman</h3>
 
 
 
@@ -64,7 +64,7 @@ Edit Pengumuman
                             <br>
                             <br>
                             <a class="btn btn-primary" href="/setting"> Kembali</a>
-                            &nbsp; <button type="submit" class="btn btn-success"> simpan</button>
+                            &nbsp; <button type="submit" class="btn btn-success"> Simpan</button>
                         </form>
 
 

@@ -41,8 +41,6 @@ class CreateStudentsTable extends Migration
             $table->integer('pkl')->nullable();
             $table->integer('bjep')->nullable();
             $table->integer('dg')->nullable();
-
-            // Add the `rata_rata` column as a generated column
             $table->integer('rata_rata')->storedAs(DB::raw("
                 CASE 
                     WHEN (16 - (IF(`pai` IS NULL, 1, 0) + IF(`pkn` IS NULL, 1, 0) + IF(`bindo` IS NULL, 1, 0) + 
@@ -64,7 +62,6 @@ class CreateStudentsTable extends Migration
                                IF(`dg` IS NULL, 1, 0)))
                 END
             "));
-
             $table->timestamps();
         });
     }

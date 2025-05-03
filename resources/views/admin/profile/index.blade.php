@@ -36,7 +36,7 @@ Profile
 
             <div class="card box-shadow-0 border-info">
                 <div class="card-header card-head-inverse bg-secondary">
-                    <h3 class="card-title text-center">PROFILE</h3>
+                    <h3 class="card-title text-center">Profile</h3>
 
 
                 </div>
@@ -49,22 +49,22 @@ Profile
 
                         <table>
                             <tr>
-                                <td class="font-14"><b>NAME</b></td>
+                                <td class="font-14"><b>Nama</b></td>
                                 <td class="font-14">&nbsp;: &nbsp; &nbsp; {{auth()->user()->name}}</td>
                             </tr>
                             <!--end tr-->
                             <tr>
-                                <td class="font-14"><b>USERNAME</b></td>
+                                <td class="font-14"><b>Username</b></td>
                                 <td class="font-14">&nbsp;: &nbsp; &nbsp; {{auth()->user()->username}}</td>
                             </tr>
 
                             <tr>
-                                <td class="font-14"><b>EMAIL</b></td>
+                                <td class="font-14"><b>Email</b></td>
                                 <td class="font-14">&nbsp;: &nbsp; &nbsp; {{auth()->user()->email}}</td>
                             </tr>
 
                             <tr>
-                                <td class="font-14"><b>PASSWORD</b></td>
+                                <td class="font-14"><b>Password</b></td>
                                 <td class="font-14">&nbsp;: &nbsp; &nbsp; {{auth()->user()->password_view}}</td>
                             </tr>
 

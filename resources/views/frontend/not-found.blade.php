@@ -76,7 +76,7 @@
                                         <div>
                                             <div class="alert alert-danger mb-4" role="alert">
 
-                                                <strong>NO UJIAN TIDAK DITEMUKAN</strong>
+                                                <strong>NISN TIDAK DITEMUKAN</strong>
 
 
                                             </div>
@@ -120,7 +120,7 @@
                         </div>
                         <ul class="menu menu-gray-600 menu-hover-primary fw-bold fs-6 fs-md-5 order-1 mb-5 mb-md-0">
                             <li class="menu-item">
-                                <a href="#" target="_blank" class="menu-link px-2">website</a>
+                                <a href="#" target="_blank" class="menu-link px-2">SIK</a>
                             </li>
 
                         </ul>

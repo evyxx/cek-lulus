@@ -7,8 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Student extends Model
 {
+    public $timestamps = false;
 
     use HasFactory;
-    protected $table = 'students';
-    protected $fillable = ['nisn', 'name', 'no_exam', 'class', 'status', 'message', 'nama_ortu', 'tempat_tgl_lahir', 'created_at', 'updated_at'];
+
+    protected $fillable = [
+        'nisn', 'name', 'nama_ortu', 'tempat_tgl_lahir', 'nis', 'class', 'prog_keahlian',
+        'komp_keahlian', 'status', 'message', 'pai', 'pkn', 'bindo', 'pjok', 'sejarah',
+        'seni', 'bsun', 'mat', 'bing', 'inf', 'ipas', 'dk', 'kk', 'pkl', 'bjep', 'dg'
+    ];
+
+    protected $casts = [
+        'tanggal' => 'date',
+    ];
 }

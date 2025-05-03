@@ -98,12 +98,12 @@
         <tr>
             <td width="200">NISN</td>
             <td width="1">:</td>
-            <td>{{ $student->no_exam }}</td>
+            <td>{{ $student->nisn }}</td>
         </tr>
         <tr>
-            <td width="200">NO. UJIAN</td>
+            <td width="200">NIS</td>
             <td width="1">:</td>
-            <td>{{ $student->no_exam }}</td>
+            <td>{{ $student->nis }}</td>
         </tr>
 
 

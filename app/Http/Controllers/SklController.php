@@ -116,7 +116,9 @@ class SklController extends Controller
         try {
 
             $school = School::find($id);
+            $school->kop_nama_provinsi = $request->kop_nama_provinsi;
             $school->kop_nama_disdik = $request->kop_nama_disdik;
+            $school->kop_nama_cabdin = $request->kop_nama_cabdin;
             $school->kop_nama_sekolah = $request->kop_nama_sekolah;
             $school->kop_th_pelajaran = $request->kop_th_pelajaran;
             $school->kop_alamat = $request->kop_alamat;
@@ -124,6 +126,9 @@ class SklController extends Controller
             $school->kop_pos = $request->kop_pos;
             $school->kop_website = $request->kop_website;
             $school->kop_email = $request->kop_email;
+            $school->kop_npsn = $request->kop_npsn; // Added
+            $school->kop_nss = $request->kop_nss; // Added
+            $school->kop_kodesekolah = $request->kop_kodesekolah; // Added
 
             if ($request->kop_logo_dinas != null) {
                 $kop_logo_dinas = $request->file('kop_logo_dinas');
@@ -175,12 +180,18 @@ class SklController extends Controller
                 $school->tanda_tangan = $nama_tanda_tangan;
             }
 
+            if ($request->cap != null) {
+                $cap = $request->file('cap');
+                $nama_cap =  $school->tanggal . "_" . $request->tanda_tangan_name;
+                $cap->move('files/cap', $nama_cap);
+                $school->cap = $nama_cap;
+            }
 
             $school->save();
 
             DB::commit();
             return response()->json([
-                'message' => 'Data Kop diperbaharui.',
+                'message' => 'Data Penutup diperbaharui.',
                 'code' => 200,
                 'error' => false,
             ]);

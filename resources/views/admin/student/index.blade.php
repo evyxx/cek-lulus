@@ -43,16 +43,33 @@ Admin
 
 
                     <div class="card-body card-dashboard">
-
-
+                        <div class="table-responsive">
                         <table id="example" class="table table-striped table-bordered" style="width:100%">
                             <thead>
                                 <tr class="bg-success text-white" style="font-size: 14px;">
                                     <th>Nama</th>
                                     <th>Kelas</th>
-                                    <th>Nisn</th>
-                                    <th>No Ujian</th>
-                                    <th>status </th>
+                                    <th>NISN</th>
+                                    <th>NIS</th>
+                                    <th>Program Keahlian</th>
+                                    <th>Kompetensi Keahlian</th>
+                                    <th>PAI</th>
+                                    <th>PPKn</th>
+                                    <th>Bahasa Indonesia</th>
+                                    <th>PJOK</th>
+                                    <th>Sejarah</th>
+                                    <th>Seni</th>
+                                    <th>Bahasa Sunda</th>
+                                    <th>Matematika</th>
+                                    <th>Bahasa Inggris</th>
+                                    <th>Informatika</th>
+                                    <th>IPAS</th>
+                                    <th>DK</th>
+                                    <th>KK</th>
+                                    <th>Bahasa Jepang</th>
+                                    <th>DG</th>
+                                    <th>Rata-rata</th>    
+                                    <th>Status </th>
                                     <th>Pesan</th>
                                     <th>Aksi</th>
                                 </tr>
@@ -65,7 +82,25 @@ Admin
                                     <td>@{{ st.name }}</td>
                                     <td>@{{ st.class }}</td>
                                     <td>@{{ st.nisn }}</td>
-                                    <td>@{{ st.no_exam }}</td>
+                                    <td>@{{ st.nis }}</td>
+                                    <td>@{{ st.prog_keahlian }}</td>
+                                    <td>@{{ st.komp_keahlian }}</td>
+                                    <td>@{{ st.pai }}</td>
+                                    <td>@{{ st.pkn }}</td>
+                                    <td>@{{ st.bindo }}</td>
+                                    <td>@{{ st.pjok }}</td>
+                                    <td>@{{ st.seni }}</td>
+                                    <td>@{{ st.bsun }}</td>
+                                    <td>@{{ st.mat }}</td>
+                                    <td>@{{ st.bing }}</td>
+                                    <td>@{{ st.inf }}</td>
+                                    <td>@{{ st.ipas }}</td>
+                                    <td>@{{ st.dk }}</td>
+                                    <td>@{{ st.kk }}</td>
+                                    <td>@{{ st.pkl }}</td>
+                                    <td>@{{ st.bjep }}</td>
+                                    <td>@{{ st.dg }}</td>
+                                    <td>@{{ st.rata_rata }}</td>
                                     <td v-if="st.status == 1">
                                         <span class="badge bg-success">
                                             LULUS
@@ -74,12 +109,15 @@ Admin
 
                                     <td v-if="st.status == 2">
                                         <span class="badge bg-danger">
-                                            DI TUNDA
+                                            DITUNDA
                                         </span>
                                     </td>
 
                                     <td>@{{ st.message }}</td>
-                                    <td><a class="btn btn-danger" href="" @click.prevent="deleteRecord(st.id)"><i class="fa fa-trash"></i></a></td>
+                                    <td><a class="btn btn-danger" href="" @click.prevent="deleteRecord(st.id)"><i class="fa fa-trash"></i></a>
+                                        <a class="btn btn-warning" href="/student/edit/@{{ st.id }}"><i class="fa fa-edit"></i></a>
+                                        <a class="btn btn-info" href="/student/view/@{{ st.id }}"><i class="fa fa-eye"></i></a>
+                                    </td>
 
                                 </tr>
 
@@ -87,6 +125,7 @@ Admin
                             </tbody>
 
                         </table>
+                        </div>
                     </div>
                 </div>
             </div>
