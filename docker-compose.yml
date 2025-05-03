@@ -1,0 +1,63 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: sik-skiel
+    container_name: sik-skiel
+    restart: unless-stopped
+    working_dir: /var/www
+    volumes:
+      - ./app:/var/www
+    networks:
+      - laravel
+
+  webserver:
+    image: nginx:alpine
+    container_name: webserver-sik
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - ./app:/var/www
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app
+    networks:
+      - laravel
+    labels:
+     - "traefik.enable=true"
+     - "traefik.http.routers.sik.rule=Host(`sik.smkn1gnputri.sch.id`)"
+     - "traefik.http.routers.sik.entrypoints=web"
+     - "traefik.http.routers.sik.service=sik"
+     - "traefik.http.routers.sik.entrypoints=websecure"
+     - "traefik.http.services.sik.loadbalancer.server.port=8080"
+     - "traefik.http.routers.sik.tls=true"
+     - "traefik.http.routers.sik.tls.certresolver=letsencrypt"
+     - "traefik.http.services.sik.loadbalancer.passhostheader=true"
+     - "traefik.http.routers.sik.middlewares=compresstraefik"
+     - "traefik.http.middlewares.compresstraefik.compress=true"
+     - "traefik.docker.network=traefik-network"
+
+  db:
+    image: mariadb:11.7
+    container_name: db-sik
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: SIK.skiel106!@#
+      MYSQL_DATABASE: sik-skiel
+      MYSQL_USER: admin-sik
+      MYSQL_PASSWORD: SIK.skiel106!@#
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - laravel
+
+networks:
+  laravel:
+    external: true
+
+volumes:
+  db_data:
