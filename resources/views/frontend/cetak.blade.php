@@ -1,147 +1,150 @@
+@php
+    use Carbon\Carbon;
+@endphp
+
 @if($student->status == 1)
 <style>
     @media print {
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 12pt;
+            margin: 20px;
+        }
 
-        .printme,
-        .printme * {
+        .print-area * {
             visibility: visible;
         }
 
-        html,
-        body {
-            height: auto;
-            font-size: 10pt;
-            /* changing to 10pt has no impact */
+        .print-area {
+            page-break-after: always;
         }
 
         @page {
-
-            margin: 20px;
-
-        }
-
-        @media screen {
-            div.divFooter {
-                display: none;
-            }
-        }
-
-        @media print {
-            div.divFooter {
-                position: fixed;
-                bottom: 0;
-            }
+            size: A4;
+            margin: 10mm;
         }
     }
 </style>
 
-<table border="0" width="100%">
-    <tr>
-        <td align="center">
-            <img src="/files/logo/{{ $school->kop_logo_dinas}}" alt="logo2" width="70">
-        </td>
-        <td align="center">
-            <b style="font-size:21px; text-transform: uppercase;">{{ $school->kop_nama_disdik }} </b> <br>
-            <b style="font-size:28px; text-transform: uppercase;">{{ $school->kop_nama_sekolah }}</b> <br>
-            <b style="font-size:19px; text-transform: uppercase;">TAHUN PELAJARAN {{ $school->kop_th_pelajaran }}</b>
-        </td>
-        <td align="center">
-            <img src="/files/logo/{{ $web->logo }}" alt="logo2" width="70">
-        </td>
-    </tr>
-    <tr>
-        <td colspan="3" align="center" style="font-size:15px;">
-            Alamat : {{ $school->kop_alamat }} &nbsp;<img src="/files/logo/telephone.png" width="15px" alt="telp." style="margin-bottom:-5px;margin-right:-5px;"> &nbsp;{{ $school->kop_telepon }}
-            <img src="/files/logo/mailbox.png" width="15px" alt="Kode Pos." style="margin-bottom:-3px;margin-right:-5px;"> &nbsp;{{ $school->kop_pos }}
-            <br>
-            Website : {{ $school->kop_website }} e-mail : {{ $school->kop_email }}
-        </td>
-    </tr>
-    <tr>
-        <td colspan="3" align="center">
-            <hr size="0" color="black" style="margin:0px;margin-bottom:1px;">
-            <hr size="2" color="black" style="margin:0px;">
-        </td>
-    </tr>
-</table>
-<br>
-
 <body onload="window.print();">
-    <h4 align="center" style="margin-top:0px;"><u>{{ $school->nama_surat }}</u>
-        <p>Nomor: {{ $school->no_surat }}</p>
-    </h4>
-
-
-    <br>
-    <p>{{ $school->pembuka_surat }}</p>
-    <br>
-
-    <table width="100%" border="0">
-
+<div class="print-area">
+    <table width="100%">
         <tr>
-            <td>NAMA LENGKAP</td>
-            <td>:</td>
-            <td>{{ $student->name }}</td>
-        </tr>
-        <tr>
-            <td>NAMA ORANGTUA</td>
-            <td>:</td>
-            <td>{{ $student->nama_ortu }}</td>
-        </tr>
-        <tr>
-            <td>TEMPAT, TANGGAL LAHIR</td>
-            <td>:</td>
-            <td>{{ $student->tempat_tgl_lahir }}</td>
-        </tr>
-
-
-        <tr>
-            <td width="200">NISN</td>
-            <td width="1">:</td>
-            <td>{{ $student->nisn }}</td>
-        </tr>
-        <tr>
-            <td width="200">NIS</td>
-            <td width="1">:</td>
-            <td>{{ $student->nis }}</td>
-        </tr>
-
-
-
-    </table>
-    <br>
-    <br>
-    Yang Bersangkutan dinyatakan :
-    <center>
-        <table style="border: 1px solid black;">
-
-            <td>
-                <p><i><b> &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;LULUS &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;</b></i></p>
+            <td width="15%" align="center">
+                <img src="/files/logo/{{ $school->kop_logo_dinas}}" width="70">
             </td>
+            <td align="center">
+                <div style="font-size:13pt; font-weight:bold; text-transform:uppercase;">{{ $school->kop_nama_provinsi }}</div>
+                <div style="font-size:13pt; font-weight:bold; text-transform:uppercase;">{{ $school->kop_nama_disdik }}</div>
+                <div style="font-size:15pt; font-weight:bold; text-transform:uppercase;">{{ $school->kop_nama_cabdin }}</div>
+                <div style="font-size:15pt; font-weight:bold; text-transform:uppercase;">{{ $school->kop_nama_sekolah }}</div>
+            </td>
+            <td width="15%" align="center">
+                <img src="/files/logo/{{ $web->logo }}" width="70">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" align="center" style="font-size:10pt;">
+                Alamat: {{ $school->kop_alamat }}, Kode Pos: {{ $school->kop_pos }}<br>
+                Telp: {{ $school->kop_telepon }}, Email: {{ $school->kop_email }}, Website: {{ $school->kop_website }}<br>
+                NPSN: {{ $school->kop_npsn }}, NSS: {{ $school->kop_nss }}, Kode Sekolah: {{ $school->kop_kodesekolah }}
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <hr style="border: 1px solid black; margin: 4px 0;">
+                <hr style="border: 2px solid black; margin: 0;">
+            </td>
+        </tr>
+    </table>
 
+    <h3 align="center" style="text-decoration: underline; margin-top: 20px;">SURAT KETERANGAN LULUS</h3>
+
+    <p>Kepala SMK Negeri 1 Gunungputri Tahun Pelajaran 2024/2025, dengan berdasarkan:</p>
+    <ol>
+        <li>Penyelesaian seluruh program pembelajaran pada Kurikulum 2013 / Kurikulum Merdeka;</li>
+        <li>Kriteria Kelulusan dari satuan pendidikan sesuai dengan peraturan perundang-undangan;</li>
+        <li>Rapat Pleno Dewan Guru tentang Penetapan Kelulusan pada tanggal 02 Mei 2025;</li>
+    </ol>
+
+    <p>Menerangkan bahwa:</p>
+    <table>
+        <tr><td>Nama</td><td>:</td><td><b>{{ $student->name }}</b></td></tr>
+        <tr><td>Tempat, Tanggal Lahir</td><td>:</td><td>{{ $student->tempat_tgl_lahir }}</td></tr>
+        <tr><td>Nama Orang Tua</td><td>:</td><td>{{ $student->nama_ortu }}</td></tr>
+        <tr><td>Nomor Induk Siswa</td><td>:</td><td>{{ $student->nis }}</td></tr>
+        <tr><td>Nomor Induk Siswa Nasional</td><td>:</td><td>{{ $student->nisn }}</td></tr>
+        <tr><td>Program Keahlian</td><td>:</td><td>{{ $student->prog_keahlian }}</td></tr>
+        <tr><td>Kompetensi Keahlian</td><td>:</td><td>{{ $student->komp_keahlian }}</td></tr>
+        <tr><td>Dinyatakan</td><td>:</td><td><b>LULUS</b></td></tr>
+    </table>
+
+    <!-- <p style="margin-top: 20px;">Dinyatakan: LULUS</p> -->
+    <!-- <center>
+        <table border="1" cellpadding="10" style="border-collapse: collapse;">
+            <tr>
+                <td align="center"><strong>LULUS</strong></td>
+            </tr>
         </table>
-    </center>
-    <br>
-    <p>{{ $school->penutup_surat }}</p>
-    <br>
-    <br>
-    <br>
-    <br>
+    </center> -->
 
-    <div style="float:right;">
-        {{ $school->tempat }}, {{ $school->tanggal }} <br>
-        {{ $school->jabatan_penandatangan }}, <br>
-        <img src="/files/ttd/{{ $school->tanda_tangan}}" alt="" width="100"><br>
-        <br>
+    <p style="margin-top: 20px;">Dengan Rata-rata Nilai*):</p>
+    <table border="1" cellspacing="0" cellpadding="6" width="100%" style="border-collapse: collapse; font-size: 11pt;">
+    <tr style="background-color: #f0f0f0;">
+        <th width="5%">No</th>
+        <th>Mata Pelajaran (Kurikulum Merdeka)</th>
+        <th width="10%">Nilai Ujian Sekolah</th>
+    </tr>
 
-        <b><u>{{ $school->nama_penandatangan }}</u></b><br>
+    {{-- A. UMUM --}}
+    <tr><td colspan="3"><strong>A. UMUM</strong></td></tr>
+    <tr><td>1</td><td>Pendidikan Agama dan Budi Pekerti</td><td align="center">{{ $student->pai }}</td></tr>
+    <tr><td>2</td><td>Pendidikan Pancasila dan Kewarganegaraan</td><td align="center">{{ $student->pkn }}</td></tr>
+    <tr><td>3</td><td>Bahasa Indonesia</td><td align="center">{{ $student->bindo }}</td></tr>
+    <tr><td>4</td><td>Pendidikan Jasmani, Olahraga dan Kesehatan</td><td align="center">{{ $student->pjok }}</td></tr>
+    <tr><td>5</td><td>Sejarah</td><td align="center">{{ $student->sejarah }}</td></tr>
+    <tr><td>6</td><td>Seni Budaya</td><td align="center">{{ $student->seni }}</td></tr>
+    <tr><td>7</td><td>Muatan Lokal</td><td align="center"></td></tr>
+    <tr><td></td><td>a. Bahasa Sunda</td><td align="center">{{ $student->bsun }}</td></tr>
+
+    {{-- B. KEJURUAN --}}
+    <tr><td colspan="3"><strong>B. KEJURUAN</strong></td></tr>
+    <tr><td>1</td><td>Matematika</td><td align="center">{{ $student->mat }}</td></tr>
+    <tr><td>2</td><td>Bahasa Inggris</td><td align="center">{{ $student->bing }}</td></tr>
+    <tr><td>3</td><td>Informatika</td><td align="center">{{ $student->inf }}</td></tr>
+    <tr><td>4</td><td>Ilmu Pengetahuan Alam dan Sosial (IPAS)</td><td align="center">{{ $student->ipas }}</td></tr>
+    <tr><td>5</td><td>Muatan Lokal</td><td align="center"></td></tr>
+    <tr><td></td><td>a. Dasar-dasar Kejuruan</td><td align="center">{{ $student->dk }}</td></tr>
+    <tr><td></td><td>b. Konsentrasi Keahlian</td><td align="center">{{ $student->kk }}</td></tr>
+    <tr><td>6</td><td>Praktik Kerja Lapangan</td><td align="center">{{ $student->pkl }}</td></tr>
+    <tr><td>7</td><td>Muatan Lokal</td><td align="center"></td></tr>
+    <tr><td></td><td>a. Bahasa Jepang</td><td align="center">{{ $student->bjep }}</td></tr>
+    <tr><td></td><td>b. Desain Grafis</td><td align="center">{{ $student->dg }}</td></tr>
+</table>
+
+    <p><i>*Surat Keterangan Lulus ini hanya berlaku sampai diterbitkannya Ijazah</i></p>
+
+    <br><br>
+    <div style="float: right; text-align: left; width: 320px;">
+        {{ $school->tempat }}, {{ \Carbon\Carbon::parse($school->tanggal)->locale('id')->translatedFormat('d F Y') }}<br>
+        Kepala Sekolah,
+        <div style="position: relative; width: 100%; height: 150px; margin-top: 10px; margin-bottom: 10px;">
+            {{-- Tanda tangan --}}
+            <img src="/files/ttd/{{ $school->tanda_tangan }}" width="220"
+                style="position: absolute; top: 20px; left: 40px; z-index: 1;">
+
+            {{-- Cap stempel di kiri menimpa tanda tangan --}}
+            <img src="/files/cap/{{ $school->cap }}" width="130"
+                style="position: absolute; top: 10px; left: 0px; z-index: 2; opacity: 0.85;">
+        </div>
+
+        <strong><u>{{ $school->nama_penandatangan }}</u></strong><br>
         NIP. {{ $school->nip_penandatangan }}
     </div>
-    <br><br><br><br><br><br><br><br><br><br>
 
 
-
+</div>
 </body>
 @else
-ANDA TIDAK BISA CETAK KARTU
+<p>ANDA TIDAK BISA CETAK SURAT KETERANGAN LULUS</p>
 @endif

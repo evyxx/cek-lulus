@@ -53,7 +53,7 @@ Setting SKL
                                             <input type="text" class="form-control" id="basicInput" v-model="kop_nama_disdik">
                                         </fieldset>
                                     </div>
-                                    
+
                                     <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
                                         <fieldset class="form-group">
                                             <label for="basicInput">Nama Cabang Dinas</label>
@@ -121,7 +121,13 @@ Setting SKL
                                             <input type="text" class="form-control" id="basicInput" v-model="kop_kodesekolah">
                                         </fieldset>
                                     </div>
-                                    
+
+                                    <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <label for="basicInput">Tanggal</label>
+                                            <input type="date" class="form-control" id="basicInput" v-model="tanggal">
+                                        </fieldset>
+                                    </div>
                             
                                     <br>
 
