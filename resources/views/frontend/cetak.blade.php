@@ -113,13 +113,15 @@
     <tr><td>2</td><td>Bahasa Inggris</td><td align="center">{{ $student->bing }}</td></tr>
     <tr><td>3</td><td>Informatika</td><td align="center">{{ $student->inf }}</td></tr>
     <tr><td>4</td><td>Ilmu Pengetahuan Alam dan Sosial (IPAS)</td><td align="center">{{ $student->ipas }}</td></tr>
-    <tr><td>5</td><td>Muatan Lokal</td><td align="center"></td></tr>
+    <tr><td>5</td><td>Kejuruan</td><td align="center"></td></tr>
     <tr><td></td><td>a. Dasar-dasar Kejuruan</td><td align="center">{{ $student->dk }}</td></tr>
     <tr><td></td><td>b. Konsentrasi Keahlian</td><td align="center">{{ $student->kk }}</td></tr>
-    <tr><td>6</td><td>Praktik Kerja Lapangan</td><td align="center">{{ $student->pkl }}</td></tr>
-    <tr><td>7</td><td>Muatan Lokal</td><td align="center"></td></tr>
+    <tr><td>6</td><td>Projek Kreatif dan Kewirausahaan</td><td align="center">{{ $student->pkk }}</td></tr>
+    <tr><td>7</td><td>Praktik Kerja Lapangan</td><td align="center">{{ $student->pkl }}</td></tr>
+    <tr><td>8</td><td>Mata Pelajaran Pilihan</td><td align="center"></td></tr>
     <tr><td></td><td>a. Bahasa Jepang</td><td align="center">{{ $student->bjep }}</td></tr>
     <tr><td></td><td>b. Desain Grafis</td><td align="center">{{ $student->dg }}</td></tr>
+    <tr><td colspan="2"><strong>Rata-rata</strong></td><td align="center">{{ $student->rata_rata }}</td></tr>
 </table>
 
     <p><i>*Surat Keterangan Lulus ini hanya berlaku sampai diterbitkannya Ijazah</i></p>

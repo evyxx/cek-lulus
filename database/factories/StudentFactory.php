@@ -33,6 +33,7 @@ class StudentFactory extends Factory
             'dk' => $this->faker->numberBetween(70, 100),
             'kk' => $this->faker->numberBetween(70, 100),
             'pkl' => $this->faker->numberBetween(70, 100),
+            'pkk' => $this->faker->numberBetween(70, 100),
             'bjep' => $this->faker->numberBetween(70, 100),
             'dg' => $this->faker->numberBetween(70, 100),
         ];

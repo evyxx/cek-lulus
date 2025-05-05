@@ -14,7 +14,7 @@ class Student extends Model
     protected $fillable = [
         'nisn', 'name', 'nama_ortu', 'tempat_tgl_lahir', 'nis', 'class', 'prog_keahlian',
         'komp_keahlian', 'status', 'message', 'pai', 'pkn', 'bindo', 'pjok', 'sejarah',
-        'seni', 'bsun', 'mat', 'bing', 'inf', 'ipas', 'dk', 'kk', 'pkl', 'bjep', 'dg'
+        'seni', 'bsun', 'mat', 'bing', 'inf', 'ipas', 'dk', 'kk', 'pkk', 'pkl', 'bjep', 'dg',
     ];
 
     protected $casts = [

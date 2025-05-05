@@ -45,9 +45,12 @@ class StudentImport implements ToModel, WithStartRow
             'ipas' => $row[21],
             'dk' => $row[22],
             'kk' => $row[23],
-            'pkl' => $row[24],
-            'bjep' => $row[25],
-            'dg' => $row[26],
+            'pkk' => $row[24],
+            'pkl' => $row[25],
+            'bjep' => $row[26],
+            'dg' => $row[27],
         ]);
     }
 }
+
+

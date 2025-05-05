@@ -33,6 +33,7 @@ class StudentSeeder extends Seeder
             'ipas' => 78,
             'dk' => 85,
             'kk' => 87,
+            'pkk' => 90,
             'pkl' => 90,
             'bjep' => 88,
             'dg' => 86,

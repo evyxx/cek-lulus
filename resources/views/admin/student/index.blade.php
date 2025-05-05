@@ -66,6 +66,8 @@ Admin
                                     <th>IPAS</th>
                                     <th>DK</th>
                                     <th>KK</th>
+                                    <th>PKK</th>
+                                    <th>PKL</th>
                                     <th>Bahasa Jepang</th>
                                     <th>DG</th>
                                     <th>Rata-rata</th>    
@@ -97,9 +99,11 @@ Admin
                                     <td>@{{ st.ipas }}</td>
                                     <td>@{{ st.dk }}</td>
                                     <td>@{{ st.kk }}</td>
+                                    <td>@{{ st.pkk }}</td>
                                     <td>@{{ st.pkl }}</td>
                                     <td>@{{ st.bjep }}</td>
                                     <td>@{{ st.dg }}</td>
+                                    <td>@{{ st.message }}</td>
                                     <td>@{{ st.rata_rata }}</td>
                                     <td v-if="st.status == 1">
                                         <span class="badge bg-success">

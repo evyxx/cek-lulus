@@ -191,21 +191,22 @@ CREATE TABLE `students` (
   `ipas` int(11) DEFAULT NULL,
   `dk` int(11) DEFAULT NULL,
   `kk` int(11) DEFAULT NULL,
+  `pkk` int(11) DEFAULT NULL,
   `pkl` int(11) DEFAULT NULL,
   `bjep` int(11) DEFAULT NULL,
   `dg` int(11) DEFAULT NULL,
-  `rata_rata` int(11) GENERATED ALWAYS AS (case when 16 - (if(`pai` is null,1,0) + if(`pkn` is null,1,0) + if(`bindo` is null,1,0) + if(`pjok` is null,1,0) + if(`sejarah` is null,1,0) + if(`seni` is null,1,0) + if(`bsun` is null,1,0) + if(`mat` is null,1,0) + if(`bing` is null,1,0) + if(`inf` is null,1,0) + if(`ipas` is null,1,0) + if(`dk` is null,1,0) + if(`kk` is null,1,0) + if(`pkl` is null,1,0) + if(`bjep` is null,1,0) + if(`dg` is null,1,0)) = 0 then NULL else (coalesce(`pai`,0) + coalesce(`pkn`,0) + coalesce(`bindo`,0) + coalesce(`pjok`,0) + coalesce(`sejarah`,0) + coalesce(`seni`,0) + coalesce(`bsun`,0) + coalesce(`mat`,0) + coalesce(`bing`,0) + coalesce(`inf`,0) + coalesce(`ipas`,0) + coalesce(`dk`,0) + coalesce(`kk`,0) + coalesce(`pkl`,0) + coalesce(`bjep`,0) + coalesce(`dg`,0)) / (16 - (if(`pai` is null,1,0) + if(`pkn` is null,1,0) + if(`bindo` is null,1,0) + if(`pjok` is null,1,0) + if(`sejarah` is null,1,0) + if(`seni` is null,1,0) + if(`bsun` is null,1,0) + if(`mat` is null,1,0) + if(`bing` is null,1,0) + if(`inf` is null,1,0) + if(`ipas` is null,1,0) + if(`dk` is null,1,0) + if(`kk` is null,1,0) + if(`pkl` is null,1,0) + if(`bjep` is null,1,0) + if(`dg` is null,1,0))) end) STORED
+  `rata_rata` int(11) GENERATED ALWAYS AS (case when 17 - (if(`pai` is null,1,0) + if(`pkn` is null,1,0) + if(`bindo` is null,1,0) + if(`pjok` is null,1,0) + if(`sejarah` is null,1,0) + if(`seni` is null,1,0) + if(`bsun` is null,1,0) + if(`mat` is null,1,0) + if(`bing` is null,1,0) + if(`inf` is null,1,0) + if(`ipas` is null,1,0) + if(`dk` is null,1,0) + if(`kk` is null,1,0) + if(`pkk` is null,1,0) + if(`pkl` is null,1,0) + if(`bjep` is null,1,0) + if(`dg` is null,1,0)) = 0 then NULL else (coalesce(`pai`,0) + coalesce(`pkn`,0) + coalesce(`bindo`,0) + coalesce(`pjok`,0) + coalesce(`sejarah`,0) + coalesce(`seni`,0) + coalesce(`bsun`,0) + coalesce(`mat`,0) + coalesce(`bing`,0) + coalesce(`inf`,0) + coalesce(`ipas`,0) + coalesce(`dk`,0) + coalesce(`kk`,0) + coalesce(`pkk`,0) + coalesce(`pkl`,0) + coalesce(`bjep`,0) + coalesce(`dg`,0)) / (17 - (if(`pai` is null,1,0) + if(`pkn` is null,1,0) + if(`bindo` is null,1,0) + if(`pjok` is null,1,0) + if(`sejarah` is null,1,0) + if(`seni` is null,1,0) + if(`bsun` is null,1,0) + if(`mat` is null,1,0) + if(`bing` is null,1,0) + if(`inf` is null,1,0) + if(`ipas` is null,1,0) + if(`dk` is null,1,0) + if(`kk` is null,1,0) + if(`pkk` is null,1,0) + if(`pkl` is null,1,0) + if(`bjep` is null,1,0) + if(`dg` is null,1,0))) end) STORED
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `students`
 --
 
-INSERT INTO `students` (`id`, `nisn`, `name`, `nama_ortu`, `tempat_tgl_lahir`, `nis`, `class`, `prog_keahlian`, `komp_keahlian`, `status`, `message`, `pai`, `pkn`, `bindo`, `pjok`, `sejarah`, `seni`, `bsun`, `mat`, `bing`, `inf`, `ipas`, `dk`, `kk`, `pkl`, `bjep`, `dg`) VALUES
-(1, '12345611', 'FAUZI AGUSTIAN', 'BAPAK FAUZI', 'Bogor, 8 maret 1980', '121212', '12 IPA 5', 'Teknik Informatika', 'Jaringan Komputer', 1, 'ANDA DINYATAKAN LULUS', 80, 80, 75, 85, 70, 90, 88, 92, 85, 80, 78, 85, 87, 90, 88, 86),
-(2, '12345612', 'ANDI SAPUTRA', 'IBU ANDI', 'Jakarta, 10 April 1981', '121213', '12 IPA 6', 'Teknik Informatika', 'Jaringan Komputer', 1, 'ANDA DINYATAKAN LULUS', 85, 90, 75, 80, 85, 88, 90, 85, 80, 82, 84, 86, 88, 89, 87, 85),
-(3, '11144555', 'ANDREA', 'ANDRA', 'Bogor, 8 Maret 1980', '20251510', 'XI ELEKTRO 1', 'Teknik Elektronika', 'Teknik Elektronika Industri', 1, 'ANDA DINYATAKAN LULUS', 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80),
-(4, '888888', 'ADRIANO', 'ADRAINO', 'Bogor, 8 Maret 1980', '889999', 'XI ELEKTRO 1', 'Teknik Elektronika', 'Teknik Elektronika Industri', 1, 'ANDA DINYATAKAN LULUS', 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80);
+INSERT INTO `students` (`id`, `nisn`, `name`, `nama_ortu`, `tempat_tgl_lahir`, `nis`, `class`, `prog_keahlian`, `komp_keahlian`, `status`, `message`, `pai`, `pkn`, `bindo`, `pjok`, `sejarah`, `seni`, `bsun`, `mat`, `bing`, `inf`, `ipas`, `dk`, `kk`, `pkk`, `pkl`, `bjep`, `dg`) VALUES
+(1, '12345611', 'FAUZI AGUSTIAN', 'BAPAK FAUZI', 'Bogor, 8 maret 1980', '121212', '12 IPA 5', 'Teknik Informatika', 'Jaringan Komputer', 1, 'ANDA DINYATAKAN LULUS', 80, 80, 75, 85, 70, 90, 88, 92, 85, 80, 78, 85, 87, 90, 88, 86, 89),
+(2, '12345612', 'ANDI SAPUTRA', 'IBU ANDI', 'Jakarta, 10 April 1981', '121213', '12 IPA 6', 'Teknik Informatika', 'Jaringan Komputer', 1, 'ANDA DINYATAKAN LULUS', 85, 90, 75, 80, 85, 88, 90, 85, 80, 82, 84, 86, 88, 89, 87, 85, 89),
+(3, '11144555', 'ANDREA', 'ANDRA', 'Bogor, 8 Maret 1980', '20251510', 'XI ELEKTRO 1', 'Teknik Elektronika', 'Teknik Elektronika Industri', 1, 'ANDA DINYATAKAN LULUS', 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 89),
+(4, '888888', 'ADRIANO', 'ADRAINO', 'Bogor, 8 Maret 1980', '889999', 'XI ELEKTRO 1', 'Teknik Elektronika', 'Teknik Elektronika Industri', 1, 'ANDA DINYATAKAN LULUS', 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 89);
 
 -- --------------------------------------------------------
 
